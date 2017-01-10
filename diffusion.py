@@ -175,7 +175,7 @@ for value in Relative_Distances:
     i=i+1
 
 # Define time span (years) and distance (km)
-distance = 50.
+distance = 20.
 timespan = 1.0
 
 # Get rid of any events that happened before random selection
