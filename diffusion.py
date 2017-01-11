@@ -16,7 +16,7 @@ def date_to_dec(year, month, day):
     int_month = int(month)
     day = float(day)
     # account for leap years in February
-    if year%4==0:
+    if year%4.==0:
         feb = 29.
     else:
         feb = 28.
@@ -194,6 +194,118 @@ for key in Keys2:
     if key[0]<distance:
         Keys3.append(key)
 
+
+# Select maximum from each group
+month1=[]
+month2=[]
+month3=[]
+month4=[]
+month5=[]
+month6=[]
+month7=[]
+month8=[]
+month9=[]
+month10=[]
+month11=[]
+month12=[]
+month_list = []
+
+i=0
+for key in Keys3:
+    if key[1]<Rdate + (1./12.):
+        month1.append(key)
+        month_list.append(month1)
+        continue
+    if key[1]<Rdate + (2./12.):
+        month2.append(key)
+        month_list.append(month2)
+        continue
+    if key[1]<Rdate + (3./12.):
+        month3.append(key)
+        month_list.append(month3)
+        continue
+    if key[1]<Rdate + (4./12.):
+        month4.append(key)
+        month_list.append(month4)
+        continue
+    if key[1]<Rdate + (5./12.):
+        month5.append(key)
+        month_list.append(month5)
+        continue
+    if key[1]<Rdate + (6./12.):
+        month6.append(key)
+        month_list.append(month6)
+        continue
+    if key[1]<Rdate + (7./12.):
+        month7.append(key)
+        month_list.append(month7)
+        continue
+    if key[1]<Rdate + (8./12.):
+        month8.append(key)
+        month_list.append(month8)
+        continue
+    if key[1]<Rdate + (9./12.):
+        month9.append(key)
+        month_list.append(month9)
+        continue
+    if key[1]<Rdate + (10./12.):
+        month10.append(key)
+        month_list.append(month10)
+        continue
+    if key[1]<Rdate + (11./12.):
+        month11.append(key)
+        month_list.append(month11)
+        continue
+    if key[1]<Rdate + (12./12.):
+        month12.append(key)
+        month_list.append(month12)
+        continue
+
+refined_month_list = []
+for month in month_list:
+    if not month:
+        continue
+    else:
+        refined_month_list.append(month)
+
+maxima = []
+for month in refined_month_list:
+    distz = []
+    for key in month:
+        distz.append(key[0])
+    maximum = max(distz)
+    index = distz.index(maximum)
+    maxima.append(month[index])
+
+# Seperate maxima into two arrays, containing distance and time values. Prep for lstsq solution.
+timez = []
+t = []
+r = []
+for key in maxima:
+    t.append(4.*np.pi*float(key[1]))
+    timez.append(float(key[1]))
+    r.append(float(key[0])**2)
+
+# Convert to numpy matrices and transpose
+r = np.asmatrix(r)
+t = np.asmatrix(t)
+r = r.T
+t = t.T
+
+print 'Data points'
+print Keys3
+
+# Perform least squares solution to generate D value
+D, residuals, rank, s = np.linalg.lstsq(t, r)
+print 'D value: ' + str(D)
+
+# Use D value and t matrix to generate a 'r' values, which represent the curve
+r1 = t * D
+r1 = np.sqrt(r1)
+print 'Curve values:'+str(r1)
+print 'Curve times:'+str(timez)
+
+# Plot data points
 for key in Keys3:
     if key[2]>7.5:
         plt.scatter(key[1], key[0], c='red', s=40)
@@ -207,8 +319,10 @@ for key in Keys3:
         plt.scatter(key[1], key[0], c='blue', s=40)
     else:
         plt.scatter(key[1], key[0], c='purple', s=40)
-print R
-print Relative_Distances
+
+# Plot calculated curve points
+r1 = np.asarray(r1)
+plt.scatter(timez, r1, c='black', s=40)
 
 #plt.xlim(Rdate, Rdate+timespan)
 #plt.ylim(0.0, distance)
