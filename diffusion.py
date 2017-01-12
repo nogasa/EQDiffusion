@@ -45,6 +45,20 @@ class catalog():
         self.Depths = []
         self.Mags = []
         self.Decimal_dates = []
+        self.minlat = 0.
+        self.maxlat = 0.
+        self.minlon = 0.
+        self.maxlon = 0.
+        self.minyear = 0.
+        self.minmonth = 0.
+        self.minday = 0.
+        self.maxyear = 0.
+        self.maxmonth = 0.
+        self.maxday = 0.
+        self.minmag = 0.
+        self.maxmag = 0.
+        self.mindepth = 0.
+        self.maxdepth = 0.
 
     def harvest_NCDEC(self,filename):
         '''
@@ -86,6 +100,7 @@ class catalog():
             day = float(Date[2])
             decimal_date = date_to_dec(year, month, day)
             self.Decimal_dates.append(decimal_date)
+        print 'harvest from NCDEC Earthquake Catalog'
 
     def harvest_USGS(self,filename):
         '''
@@ -134,22 +149,75 @@ class catalog():
             decimal_date = date_to_dec(year, month, day)
             decimal_date = decimal_date + time_to_dec(time)
             self.Decimal_dates.append(decimal_date)
+        print 'harvested from USGS Earthquake catalog'
 
+    def harvest_SCDEC(self,filename, boundaries=False):
+        '''
+        Harvests data from a downloaded SCDEC text file
 
-
-
+        :param filename:    filepath from which to pull data from
+        :type filename:     string
+        :rtype:             none
+        :return:            none
+        '''
+        file = open(filename)
+        for line in file:
+            Line = line.split()
+            if __name__ == '__main__':
+                if boundaries==False:              # If no boundaries are given...gather ALL data
+                    year = Line[0]
+                    month = Line[1]
+                    day = Line[2]
+                    decdate = date_to_dec(year, month, day)
+                    self.Dates.append(decdate)
+                    a = float(Line[3])
+                    b = float(Line[4])
+                    c = float(Line[5])
+                    dec_time = (a / 24.) + (b / (24. * 60.)) + (c / (24. * 60 * 60))
+                    self.Times.append(dec_time)
+                    self.Lats.append(float(Line[7]))
+                    self.Lons.append(float(Line[8]))
+                    self.Depths.append(float(Line[9]))
+                    self.Mags.append(float(Line[10]))
+                if boundaries==True:               # If boundaries ARE given..gather SPECIFIED data
+                    year = Line[0]
+                    month = Line[1]
+                    day = Line[2]
+                    if year == self.minyear:
+                        if month == self.minmonth:
+                            if day == self.minday:
+                                decdate = date_to_dec(year, month, day)
+                                a = float(Line[3])
+                                b = float(Line[4])
+                                c = float(Line[5])
+                                dec_time = (a / 24.) + (b / (24. * 60.)) + (c / (24. * 60 * 60))
+                                if float(Line[7]) >= self.minlat:
+                                    if float(Line[7]) <= self.maxlat:
+                                        if float(Line[8]) >= self.minlon:
+                                            if float(Line[9]) >=self.maxlon:
+                                                self.Dates.append(decdate)
+                                                self.Times.append(dec_time)
+                                                self.Lats.append(float(Line[7]))
+                                                self.Lons.append(float(Line[8]))
+                                                self.Depths.append(float(Line[9]))
+                                                self.Mags.append(float(Line[10]))
+        print 'harvested from SCDEC Earthquake catalog'
 
 # Define catalog
 catalog = catalog()
 
 # Pull data
-#catalog.harvest_NCDEC('./NCEDCatalog.txt')
-catalog.harvest_USGS('./USGSCatalog.xls')
+#catalog.harvest_NCDEC('./NCDECatalog.txt')
+catalog.harvest_SCDEC('./SCDECatalog(81-11).txt')
+#catalog.harvest_USGS('./USGSCatalog.xls')
 
 # Randomly select an event as a baseline
 count = len(catalog.Decimal_dates)
 R = random.randint(1,count)
 Rdate = catalog.Decimal_dates[R]
+
+print 'Randomized int: '+ str(R)
+print 'EQs in catalog: ' + str(count)
 
 # Calculate the great circle distance between randomly selected point and iteration point
 Relative_Distances = []
@@ -177,6 +245,9 @@ for value in Relative_Distances:
 # Define time span (years) and distance (km)
 distance = 20.
 timespan = 1.0
+print 'distance limit: ' + str(distance) + ' km'
+print 'time limit: ' + str(timespan) + ' years'
+
 
 # Get rid of any events that happened before random selection
 Keys1 = []
@@ -292,8 +363,6 @@ t = np.asmatrix(t)
 r = r.T
 t = t.T
 
-print 'Data points'
-print Keys3
 
 # Perform least squares solution to generate D value
 D, residuals, rank, s = np.linalg.lstsq(t, r)
@@ -302,8 +371,12 @@ print 'D value: ' + str(D)
 # Use D value and t matrix to generate a 'r' values, which represent the curve
 r1 = t * D
 r1 = np.sqrt(r1)
-print 'Curve values:'+str(r1)
-print 'Curve times:'+str(timez)
+
+# Generate time array to plot r1 against
+timez = []
+while i <12:
+    timez.append(Rdate + (float(i)/12.))
+
 
 # Plot data points
 for key in Keys3:
@@ -319,6 +392,7 @@ for key in Keys3:
         plt.scatter(key[1], key[0], c='blue', s=40)
     else:
         plt.scatter(key[1], key[0], c='purple', s=40)
+print 'number of events used: ' + str(len(Keys3))
 
 # Plot calculated curve points
 r1 = np.asarray(r1)
