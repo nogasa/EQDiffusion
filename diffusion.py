@@ -282,7 +282,7 @@ timez = []
 t = []
 r = []
 for key in maxima:
-    t.append(4.*np.pi*float(key[1]))
+    t.append(float(key[1]))
     timez.append(float(key[1]))
     r.append(float(key[0])**2)
 
@@ -296,17 +296,25 @@ print 'Data points'
 print Keys3
 
 # Perform least squares solution to generate D value
-D, residuals, rank, s = np.linalg.lstsq(t, r)
-print 'D value: ' + str(D)
+
+tzero = t-np.tile(Rdate,(len(t),1))
+print(tzero.flatten())
+print(np.zeros(len(tzero)))
+A = np.vstack([tzero.flatten(), np.zeros(len(tzero)).T]).T
+
+D4pi, residuals, rank, s = np.linalg.lstsq(A, r)
+print(D4pi)
+print 'D value: ' + str(D4pi[0])+'*4pi'
 
 # Use D value and t matrix to generate a 'r' values, which represent the curve
-r1 = t * D
-r1 = np.sqrt(r1)
+r1 = np.sqrt(t * D4pi[0])
+
 print 'Curve values:'+str(r1)
 print 'Curve times:'+str(timez)
 
 # Plot data points
 for key in Keys3:
+
     if key[2]>7.5:
         plt.scatter(key[1], key[0], c='red', s=40)
     elif key[2]>6.0:
@@ -322,7 +330,9 @@ for key in Keys3:
 
 # Plot calculated curve points
 r1 = np.asarray(r1)
-plt.scatter(timez, r1, c='black', s=40)
+plt.plot(tzero+Rdate, r1, c='black')
+
+
 
 #plt.xlim(Rdate, Rdate+timespan)
 #plt.ylim(0.0, distance)
