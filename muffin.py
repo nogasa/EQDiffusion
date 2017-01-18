@@ -71,6 +71,7 @@ class catalog():
         self.Depths = []
         self.Mags = []
         self.Decimal_dates = []
+        self.relative_decimal_dates = []
         self.minlat = 0.
         self.maxlat = 0.
         self.minlon = 0.
@@ -176,13 +177,15 @@ class catalog():
             Date = date.split('T')
             datetime = Date[0]
             time = Date[1]
+            time = time[:-2]
+            time = time_to_dec(time)
             self.Times.append(time)
             Datetime = datetime.split('-')
             year = float(Datetime[0])
             month = float(Datetime[1])
             day = float(Datetime[2])
             decimal_date = date_to_dec(year, month, day)
-            decimal_date = decimal_date + time_to_dec(time)
+            decimal_date = decimal_date + time
             self.Decimal_dates.append(decimal_date)
         print 'harvested from USGS Earthquake catalog'
 
@@ -273,20 +276,28 @@ class catalog():
         :rtype:             array
         :return:            array containing maxima
         '''
-        time_interval = self.tlimit/float(groups)
-        maxima = []
+        self.tlimit = max(self.Decimal_dates) - min(self.Decimal_dates)
+        interval = self.tlimit/float(groups)
+        dmaxima = []
+        tmaxima = []
         i=1
         while i<=groups:
             airlock=[]
-            for time in self.Times:
-                if time<(time_interval*i):
-                    if time>(time_interval*(i-1)):
-                        airlock.append(time)
-            if len(airlock)>=1:
-                maxi = max(airlock)
-                maxima.append(maxi)
+            for value in self.relative_decimal_dates:        # Organize dates into airlocks, time representing intervals
+                if value<((interval*i)):
+                    if value>(interval*(i-1)):
+                        airlock.append(value)
+            hull = []
+            if len(airlock)>=1:                     # If an airlock is constructed...
+                for date in airlock:                    # Iterate through dates in the interval
+                    index = self.relative_decimal_dates.index(date)               # Find the corresponding distances for the dates
+                    hull.append(self.Relative_distances[index])
+                maxi = max(hull)
+                index2 = self.Relative_distances.index(maxi)
+                dmaxima.append(maxi)
+                tmaxima.append(self.relative_decimal_dates[index2])
             i = i + 1
-        return maxima
+        return dmaxima, tmaxima
 
     def r_matrix(self):
         '''
@@ -296,6 +307,6 @@ class catalog():
         :return:    matrix containing distance values
         '''
         for time in self.t:
-            index = self.Times.index(time)
+            index = self.Decimal_dates.index(time)
             self.r.append((self.Relative_distances[index])**2)
 
