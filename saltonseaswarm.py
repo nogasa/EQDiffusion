@@ -103,7 +103,7 @@ if mappy == True:
     meridians = np.arange(round(catalog.minlon,1),round(catalog.maxlon,1),0.2)
     map.drawmeridians(meridians,labels=[False, False, False, True],linewidth=0)
     ax1.scatter(catalog.Lons, catalog.Lats, color = point_color)
-    plt.title('COSO EARTHQUAKE SWARM', fontweight='bold')
+    plt.title('SALTON SEA EARTHQUAKE SWARM', fontweight='bold')
     plt.show()
 
 plotty = True
