@@ -26,14 +26,13 @@ catalog.maxlat, catalog.maxlon = 33.468, -115.631
 catalog.dlimit = 50.
 
 # Pull data
-catalog.harvest_USGS('./USGSSaltonSeaCatalog.xls')
+catalog.harvest_USGS('./USGSSaltonSeaCatalog2.xls')
 for date in catalog.Decimal_dates:
     catalog.relative_decimal_dates.append(date - min(catalog.Decimal_dates))
 
 # Determine first quake of the swarm
 min_time = min(catalog.Decimal_dates)
 min_index = catalog.Decimal_dates.index(min_time)
-
 
 # Determine relative distances between all events and first event
 i=0
@@ -47,26 +46,16 @@ for event in catalog.Decimal_dates:
 print catalog.Decimal_dates
 
 # Generate curve for plotting
-groups = 20.                                               # number of time intervals to construct
-dmaxima, tmaxima = catalog.find_maxima(groups) # finds the max value in each time interval
-catalog.t = tmaxima                                         # establishes t array from the maxima array
-catalog.r = dmaxima                                          # generates array of distance values associated with t array
-
-print 'r'
-print catalog.r
-print 't'
-print catalog.t
-
-catalog.t = np.asmatrix(catalog.t)              # convert t array to t matrix
-catalog.t = catalog.t.T                         # transpose t matrix into 1 column t matrix
-catalog.r = np.asmatrix(catalog.r)              # convert r array to r matrix
-catalog.r = catalog.r.T                         # transpose r matrix into 1 column r matrix
-
-print 'r'
-print catalog.r
-print 't'
-print catalog.t
-
+groups =20.                                           # number of time intervals to construct
+dmaxima, tmaxima = catalog.find_maxima(groups)         # finds the max value in each time interval
+for value in dmaxima:                                  # square each distance value
+    d = value**2
+    catalog.r.append(d)
+catalog.t = tmaxima                                    # establishes t array from the maxima array
+catalog.t = np.asmatrix(catalog.t)                     # convert t array to t matrix
+catalog.t = catalog.t.T                                # transpose t matrix into 1 column t matrix
+catalog.r = np.asmatrix(catalog.r)                     # convert r array to r matrix
+catalog.r = catalog.r.T                                # transpose r matrix into 1 column r matrix
 catalog.D,residuals,rank,s = np.linalg.lstsq(catalog.t,catalog.r)           # LEAST SQUARES OPERATION
 
 # Printing routine
@@ -92,14 +81,15 @@ y=[]
 for value in np.ndenumerate(r1):
     y.append(value[1])
 y = np.array(y)
-z = np.polyfit(x,y,3)                                   # Generate z polyfit
+z = np.polyfit(x,y,2)                                   # Generate z polyfit
 p = np.poly1d(z)
 xp = np.linspace(0,catalog.tlimit, 10)
 
-print dmaxima
+print x
+print y
 
 # Plot map view
-point_color = 'red'
+point_color = 'lightblue'
 mappy = False
 if mappy == True:
     geomap = plt.figure()
@@ -120,12 +110,12 @@ plotty = True
 if plotty == True:
     # Plot distances vs time
     plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = point_color)
-    plt.scatter(tmaxima, dmaxima, color='black')
-    plt.scatter(x,y,color='blue')
-    plt.plot(xp,p(xp),'-')
+    plt.scatter(tmaxima, dmaxima, color='blue')
+    plt.scatter(x,y,color='black')
+    plt.plot(xp,p(xp),'-', color='black')
     plt.title('SALTON SEA EQ Swarm Diffusion - since 9/26/2016')
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
-    plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
-    plt.ylim(0., 11.)
+    plt.xlim(min(catalog.relative_decimal_dates)-0.1,max(catalog.relative_decimal_dates))
+    plt.ylim(0., 5.)
     plt.show()
