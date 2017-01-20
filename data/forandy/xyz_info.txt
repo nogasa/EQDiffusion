@@ -4,4 +4,4 @@
 #	11 is distance normalized by the diffusion coefficient,
 #	12 is time since a certain reference time in hours...
 #
-bid relnum yr mo dy hr mi sec Mw lat lon depth ndist reftime
+yr mo dy hr mi sec Mw lat lon depth ndist reftime
