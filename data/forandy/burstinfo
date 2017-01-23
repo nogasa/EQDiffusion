@@ -1,3 +1,18 @@
+#
+#       burstinfo with header info
+#
+# From Xiaowei:
+#	1: burst number
+#	2-6: year,month,day,hour,min
+#	7-8:lat,lon
+#	9: diffusivity
+#	10-11: best­fitting azimuth of velocity and dip of velocity, but this files is
+#		for diffusive migration, so these values are zero.
+#	12-19: parameters for each burst:
+#		strike, dip, planarity, radius, distance ratio between first and second
+#		half, normalized time of the largest event, skew, duration in days.
+#
+bid  yr mo dy hr mi     lat        lon       D       vaz    vdip    strike     dip planar rad   distrat tnorm   skew      duration
 05 1984  8 13  5 24  35.989   -117.781  0.7260     0.000   0.000   181.154  83.991 0.6194 0.3517 1.2291 0.5817  0.213E+00   0.7032
 07 1984 11 22 17 39  34.036   -117.542  0.1100     0.000   0.000   -26.249  84.068 0.9480 0.2392 0.7146 2.2752 -0.496E-01   3.2218
 10 1985  1 16  8 44  33.998   -116.390  0.1580     0.000   0.000    33.677  67.179 0.8930 0.5649 0.5402 0.4248  0.934E+00   6.2540
