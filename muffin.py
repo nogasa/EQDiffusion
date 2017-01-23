@@ -4,11 +4,21 @@ from math import radians, cos, sin, asin, sqrt
 from datetime import datetime as dt
 import time
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import matplotlib.patches as patches
+from matplotlib.patches import Polygon
+from matplotlib.lines import Line2D
+import matplotlib.tri as tri
+from mpl_toolkits.basemap import Basemap
+import plotly.plotly as py
+import plotly.graph_objs as go
+import pylab as pb
+import statsmodels.api as sm
 import random
 import xlrd
 
 '''
-Module for analyzing earthquake catalogs.
+Module for analyzing earthquake selfs.
 '''
 
 
@@ -70,8 +80,11 @@ class catalog():
         self.Lons = []
         self.Depths = []
         self.Mags = []
+        self.Mo = []
         self.Decimal_dates = []
         self.relative_decimal_dates = []
+        self.E0_time = 0.                       # The first event's datetime of occurence
+        self.E0_index = 0                       # The first event's position in the self.Decimal_dates array
         self.minlat = 0.
         self.maxlat = 0.
         self.minlon = 0.
@@ -130,6 +143,8 @@ class catalog():
             self.Lons.append(float(lon))
             self.Depths.append(float(depth))
             self.Mags.append(float(mw))
+            exp = 1.5 * (float(mw) + 10.7)
+            self.Mo.append(10.0**exp)
 
     def harvest_NCDEC(self, filename):
         '''
@@ -222,7 +237,7 @@ class catalog():
             decimal_date = date_to_dec(year, month, day)
             decimal_date = decimal_date + time
             self.Decimal_dates.append(decimal_date)
-        print 'harvested from USGS Earthquake catalog'
+        print 'harvested from USGS Earthquake self'
 
     def harvest_SCDEC(self, filename, boundaries=False):
         '''
@@ -273,7 +288,29 @@ class catalog():
                                             self.Lons.append(float(Line[8]))
                                             self.Depths.append(float(Line[9]))
                                             self.Mags.append(float(Line[10]))
-        print 'harvested from SCDEC Earthquake catalog'
+        print 'harvested from SCDEC Earthquake self'
+
+    def glean(self):
+        '''
+        Process data and define necessary class variables.
+
+        :rtype:         none
+        :return:        none
+        '''
+        # Generate relative decimal dates array
+        for date in self.Decimal_dates:
+            self.relative_decimal_dates.append(date - min(self.Decimal_dates))
+        # Generate first earthquake index
+        self.E0_time = min(self.Decimal_dates)
+        self.E0_index = self.Decimal_dates.index(self.E0_time)
+        # Generate relative distances array
+        i = 0
+        for event in self.Decimal_dates:
+            lon1, lat1, lon2, lat2 = map(radians, [self.Lons[self.E0_index], self.Lats[self.E0_index],
+                                                   self.Lons[i], self.Lats[i]])
+            km = haversine_distance(lon1, lat1, lon2, lat2)
+            self.Relative_distances.append(km)
+            i = i + 1
 
     def randomquake(self):
         '''
@@ -287,7 +324,7 @@ class catalog():
         self.rand_date = self.Decimal_dates[R]
         self.random = R
         print 'Randomized int: ' + str(R)
-        print 'EQs pulled from catalog: ' + str(count)
+        print 'EQs pulled from self: ' + str(count)
         return R
 
     def cull(self, d_limit, t_limit):
@@ -325,7 +362,7 @@ class catalog():
             hull = []
             if len(airlock)>=1:                     # If an airlock is constructed...
                 for date in airlock:                    # Iterate through dates in the interval
-                    index = self.relative_decimal_dates.index(date)               # Find the corresponding distances for the dates
+                    index = self.relative_decimal_dates.index(date)      # Find the corresponding distances for the dates
                     hull.append(self.Relative_distances[index])
                 maxi = max(hull)
                 index2 = self.Relative_distances.index(maxi)
@@ -347,7 +384,7 @@ class catalog():
 
     def r_matrix(self):
         '''
-        Generates the r matrix corresponding to the t-matrix from catalog.find_maxima
+        Generates the r matrix corresponding to the t-matrix from self.find_maxima
 
         :rtype:     numpy matrix
         :return:    matrix containing distance values
@@ -356,3 +393,40 @@ class catalog():
             index = self.Decimal_dates.index(time)
             self.r.append((self.Relative_distances[index])**2)
 
+    def cartographer(self):
+        '''
+        Plots events on a basemap. 
+        
+        :rtype:     none
+        :return:    none       
+        '''
+        self.minlat = min(self.Lats)
+        self.maxlat = max(self.Lats)
+        self.minlon = min(self.Lons)
+        self.maxlon = max(self.Lons)
+        londist = self.maxlon - self.minlon
+        latdist = self.maxlat - self.minlat
+        
+        geomap = plt.figure()
+        ax1 = plt.axes([0.075, 0.01, 0.875, 0.975])
+        map = Basemap(llcrnrlon=self.minlon - londist, llcrnrlat=self.minlat - latdist,
+                      urcrnrlon=self.maxlon + londist,
+                      urcrnrlat=self.maxlat + latdist, epsg=4269, projection='tmerc')
+        map.arcgisimage(service='ESRI_Imagery_World_2D', xpixels=2500, dpi=150, verbose=True, ax=ax1)
+        ax1.set_alpha(0.5)
+        parallels = np.arange(round(self.minlat), round(self.maxlat, 1), 0.05)
+        map.drawparallels(parallels, labels=[True, False, False, False], linewidth=0)
+        meridians = np.arange(round(self.minlon, 1), round(self.maxlon, 1), 0.05)
+        map.drawmeridians(meridians, labels=[False, False, False, True], linewidth=0)
+        ax1.scatter(self.Lons, self.Lats, color = 'lightblue', zorder=11)
+        plt.title('SOCAL EARTHQUAKE SWARM', fontweight='bold')
+        # Plot patch representing sampling area
+        x1, y1 = map(self.minlon, self.maxlat)
+        x2, y2 = map(self.minlon, self.minlat)
+        x3, y3 = map(self.maxlon, self.minlat)
+        x4, y4 = map(self.maxlon, self.maxlat)
+        poly = Polygon([(x1, y1), (x2, y2), (x3, y3), (x4, y4)], alpha=0.2, facecolor='white', edgecolor='black',
+                       zorder=10)
+        plt.gca().add_patch(poly)
+        plt.show()
+    
