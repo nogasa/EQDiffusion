@@ -34,6 +34,12 @@ for date in catalog.Decimal_dates:
 min_time = min(catalog.Decimal_dates)
 min_index = catalog.Decimal_dates.index(min_time)
 
+# Determine mapping boundaries
+catalog.minlat = min(catalog.Lats)
+catalog.maxlat = max(catalog.Lats)
+catalog.minlon = min(catalog.Lons)
+catalog.maxlon = max(catalog.Lons)
+
 # Determine relative distances between all events and first event
 i=0
 for event in catalog.Decimal_dates:
@@ -67,14 +73,15 @@ print 'D'
 print catalog.D/4/np.pi
 
 # Generate points to be used to plot curve
-t1 = np.asmatrix(np.linspace(0.,max(catalog.relative_decimal_dates), groups))        # Generate evenly spaced time values
+num_points = 1000.
+t1 = np.asmatrix(np.linspace(0.,max(catalog.relative_decimal_dates), num_points))        # Generate evenly spaced time values
 t1 = t1.T                                                           # transpose into 1 column matrix
 r1 = t1 * catalog.D         # multiply to get theoretical squareddistance values
 r1 = np.sqrt(r1)            # root to get true distance values
 
 
 # Generate curve to be plotted
-x = np.array(np.linspace(0.,max(catalog.relative_decimal_dates),groups))       # Generate x values for curve
+x = np.array(np.linspace(0.,max(catalog.relative_decimal_dates),num_points))       # Generate x values for curve
 r1 = r1.T                                                       # Generate y values for curve
 r1 = np.array(r1)
 y=[]
@@ -90,7 +97,7 @@ print y
 
 # Plot map view
 point_color = 'lightblue'
-mappy = False
+mappy = True
 if mappy == True:
     geomap = plt.figure()
     ax1 = plt.axes([0.075, 0.01, 0.875, 0.975])
@@ -106,16 +113,16 @@ if mappy == True:
     plt.title('SALTON SEA EARTHQUAKE SWARM', fontweight='bold')
     plt.show()
 
-plotty = True
+plotty = False
 if plotty == True:
     # Plot distances vs time
     plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = point_color)
     plt.scatter(tmaxima, dmaxima, color='blue')
-    plt.scatter(x,y,color='black')
-    plt.plot(xp,p(xp),'-', color='black')
+    plt.plot(x,y,color='black')
+    #plt.plot(xp,p(xp),'-', color='black')
     plt.title('SALTON SEA EQ Swarm Diffusion - since 9/26/2016')
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
-    plt.xlim(min(catalog.relative_decimal_dates)-0.1,max(catalog.relative_decimal_dates))
+    plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
     plt.ylim(0., 5.)
     plt.show()

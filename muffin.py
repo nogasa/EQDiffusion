@@ -95,6 +95,7 @@ class catalog():
         self.t = []
         self.D = []
         self.r = []
+        self.D_err = []
 
     def harvest_xyz(self,filename):
         '''
