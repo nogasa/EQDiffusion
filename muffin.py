@@ -96,6 +96,40 @@ class catalog():
         self.D = []
         self.r = []
 
+    def harvest_xyz(self,filename):
+        '''
+        Harvests data from the forandy file in the data file.
+
+        :param filename:    filepath from which to pull data from
+        :type filename:     basestring
+        :rtype:             none
+        :return:            none
+        '''
+        file = open(filename)
+        for line in file:
+            Line = line.split()
+            year = Line[0]
+            month = Line[1]
+            day = Line[2]
+            hour = Line[3]
+            minute = Line[4]
+            second = Line[5]
+            mw = Line[6]
+            lat = Line[7]
+            lon = Line[8]
+            depth = Line[9]
+            normdist = Line[10]
+            reftime = Line[11]
+            Decimaldate = (date_to_dec(year, month, day))
+            timestring = (str(hour)+':'+str(minute)+':'+str(second))
+            time = (time_to_dec(timestring))
+            self.Times.append(time)
+            self.Decimal_dates.append(Decimaldate + time/365.)
+            self.Lats.append(float(lat))
+            self.Lons.append(float(lon))
+            self.Depths.append(float(depth))
+            self.Mags.append(float(mw))
+
     def harvest_NCDEC(self, filename):
         '''
         Harvests data from a downloaded NCDEC txt file.
@@ -274,7 +308,7 @@ class catalog():
         :param groups:      number of groupings
         :type groups:       float
         :rtype:             array
-        :return:            array containing maxima
+        :return:            array containing maxima distances and times
         '''
         self.tlimit = max(self.Decimal_dates) - min(self.Decimal_dates)
         interval = self.tlimit/float(groups)
@@ -298,6 +332,17 @@ class catalog():
                 tmaxima.append(self.relative_decimal_dates[index2])
             i = i + 1
         return dmaxima, tmaxima
+
+    def find_max_in_columns(self,num_col):
+        '''
+        Finds the maximum for each column of data points, when data represents distinct intervals in time.
+
+        :param num_col:     number of data columns in plot for which to find a max for
+        :type num_col:      int or float
+        :rtype:             array
+        :return:            arrays of maxima distances and corresponding times
+
+        '''
 
     def r_matrix(self):
         '''
