@@ -89,6 +89,8 @@ class catalog():
         self.maxlat = 0.
         self.minlon = 0.
         self.maxlon = 0.
+        self.londist = 0.
+        self.latdist = 0.
         self.minyear = 0.
         self.minmonth = 0.
         self.minday = 0.
@@ -311,6 +313,15 @@ class catalog():
             km = haversine_distance(lon1, lat1, lon2, lat2)
             self.Relative_distances.append(km)
             i = i + 1
+        self.minlat = min(self.Lats)
+        self.maxlat = max(self.Lats)
+        self.minlon = min(self.Lons)
+        self.maxlon = max(self.Lons)
+        self.londist = self.maxlon - self.minlon
+        self.latdist = self.maxlat - self.minlat
+
+
+
 
     def randomquake(self):
         '''
@@ -326,18 +337,6 @@ class catalog():
         print 'Randomized int: ' + str(R)
         print 'EQs pulled from self: ' + str(count)
         return R
-
-    def cull(self, d_limit, t_limit):
-        '''
-        Cull quakes that do not fall within the given timespan or distance of the random quake.
-
-        :param d_limit:     the distance limit (km)
-        :param t_limit:     the timespan (years)
-        :type d_limit:      float
-        :type t_limit:      float
-        :rtype:             array
-        :return:            returns the culled list
-        '''
 
     def find_maxima(self, groups):
         '''
@@ -371,17 +370,6 @@ class catalog():
             i = i + 1
         return dmaxima, tmaxima
 
-    def find_max_in_columns(self,num_col):
-        '''
-        Finds the maximum for each column of data points, when data represents distinct intervals in time.
-
-        :param num_col:     number of data columns in plot for which to find a max for
-        :type num_col:      int or float
-        :rtype:             array
-        :return:            arrays of maxima distances and corresponding times
-
-        '''
-
     def r_matrix(self):
         '''
         Generates the r matrix corresponding to the t-matrix from self.find_maxima
@@ -400,25 +388,19 @@ class catalog():
         :rtype:     none
         :return:    none       
         '''
-        self.minlat = min(self.Lats)
-        self.maxlat = max(self.Lats)
-        self.minlon = min(self.Lons)
-        self.maxlon = max(self.Lons)
-        londist = self.maxlon - self.minlon
-        latdist = self.maxlat - self.minlat
-        
-        geomap = plt.figure()
-        ax1 = plt.axes([0.075, 0.01, 0.875, 0.975])
-        map = Basemap(llcrnrlon=self.minlon - londist, llcrnrlat=self.minlat - latdist,
-                      urcrnrlon=self.maxlon + londist,
-                      urcrnrlat=self.maxlat + latdist, epsg=4269, projection='tmerc')
+        geomap = plt.figure(figsize=(9, 9))
+        ax1 = plt.axes([0.075, 0.05, 0.875, 0.9])
+        map = Basemap(llcrnrlon=self.minlon - self.londist, llcrnrlat=self.minlat - self.latdist,
+                      urcrnrlon=self.maxlon + self.londist,
+                      urcrnrlat=self.maxlat + self.latdist, epsg=4269, projection='tmerc')
         map.arcgisimage(service='ESRI_Imagery_World_2D', xpixels=2500, dpi=150, verbose=True, ax=ax1)
         ax1.set_alpha(0.5)
-        parallels = np.arange(round(self.minlat), round(self.maxlat, 1), 0.05)
+        parallels = np.arange(round(self.minlat-self.latdist,4), round(self.maxlat+self.latdist, 4), 0.01)
         map.drawparallels(parallels, labels=[True, False, False, False], linewidth=0)
-        meridians = np.arange(round(self.minlon, 1), round(self.maxlon, 1), 0.05)
+        meridians = np.arange(round(self.minlon-self.londist, 4), round(self.maxlon+self.londist, 4), 0.01)
         map.drawmeridians(meridians, labels=[False, False, False, True], linewidth=0)
         ax1.scatter(self.Lons, self.Lats, color = 'lightblue', zorder=11)
+        ax1.scatter(self.Lons[self.E0_index], self.Lats[self.E0_index], color = 'red', zorder = 15)
         plt.title('SOCAL EARTHQUAKE SWARM', fontweight='bold')
         # Plot patch representing sampling area
         x1, y1 = map(self.minlon, self.maxlat)
@@ -428,5 +410,13 @@ class catalog():
         poly = Polygon([(x1, y1), (x2, y2), (x3, y3), (x4, y4)], alpha=0.2, facecolor='white', edgecolor='black',
                        zorder=10)
         plt.gca().add_patch(poly)
+        # Plot text describing patch size
+        lon1, lat1, lon2, lat2 = radians(self.minlon), radians(self.minlat), radians(self.minlon), radians(self.maxlat)
+        height = haversine_distance(lon1, lat1, lon2, lat2)
+        lon1, lat1, lon2, lat2 = radians(self.minlon), radians(self.minlat), radians(self.maxlon), radians(self.minlat)
+        width = haversine_distance(lon1, lat1, lon2, lat2)
+        plt.text(self.minlon+(self.londist/2.), self.minlat, str(round(width,2))+' km', fontweight='bold')
+        plt.text(self.minlon, self.minlat+(self.latdist/2.), str(round(height,2))+' km', fontweight='bold',rotation = 90)
+
         plt.show()
     

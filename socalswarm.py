@@ -54,15 +54,17 @@ catalog.D = res_wls.params
 catalog.D_err = res_wls.bse
 
 ### PRINTING ROUTINE ###
-print 'r:'
+print 'distance matrix (r):'
 print catalog.r
-print 't:'
+print 'time matrix (t):'
 print catalog.t
-print 'D:'
+print 'Diffusion Coefficient (4 * D * pi):'
 print catalog.D
-print 'standard error:'
+print 'D - Standard Error:'
 print catalog.D_err
-print 'mags'
+print 'Event Count:'
+print len(catalog.relative_decimal_dates)
+
 
 ### MAPPING ROUTINE ####
 mappy = False
@@ -87,9 +89,6 @@ for value in np.ndenumerate(r1):
     y.append(value[1])
 y = np.array(y)
 
-# Redefine catalog.Mo as 'z', the magnitude array
-z = catalog.Mo
-
 # Generate y-coordinates for confidence intervals (y1,y2 arrays)
 r2 = np.sqrt(x * (catalog.D + catalog.D_err))
 r3 = np.sqrt(x * (catalog.D - catalog.D_err))
@@ -104,35 +103,31 @@ for value in np.ndenumerate(Y01):
 for value in np.ndenumerate(Y02):
     Y2.append(value[1])
 
-print len(catalog.relative_decimal_dates)
-print len(catalog.Relative_distances)
-print len(z)
-
-
-# Generate grid and contour plot to overlay
-
+# Plot
 plotty = True
 if plotty == True:
     # Plot distances vs time
-    plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = 'lightblue', label = 'events')
-    plt.scatter(tmaxima, dmaxima, color='blue', label = 'selected events')
-    plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)')
-    plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error')
-    plt.plot(x,Y2, 'black',linestyle='--')
-    plt.title('SOCAL EQ Swarm Diffusion')
+    plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = 'lightblue',
+                label = 'events', zorder = 10)
+    plt.scatter(tmaxima, dmaxima, color='blue', label = 'selected events', zorder = 10)
+    plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)', zorder = 10)
+    plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error', zorder = 10)
+    plt.plot(x,Y2, 'black',linestyle='--', zorder = 10)
+    plt.title('SOCAL EQ Swarm Diffusion - xyz_10')
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
-    plt.ylim(0., 2.)
+    plt.ylim(0., max(catalog.Relative_distances)+0.2)
     plt.legend()
     # Generate grid and contour plot to overlay
+    z = catalog.Mags
     xi = np.linspace(0., max(catalog.relative_decimal_dates))
     yi = np.linspace(0., max(catalog.Relative_distances))
     zi = griddata((catalog.relative_decimal_dates, catalog.Relative_distances), z,
-                  (xi[None, :], yi[:, None]), method='cubic')
-    CS = plt.contour(xi, yi, zi, 15, linewidths=0.5, colors='k')
-    CS = plt.contour(xi, yi, zi, 15, cmap=plt.cm.jet)
-    plt.colorbar()
+                  (xi[None, :], yi[:, None]), method='linear')
+    CS = plt.contourf(xi, yi, zi, 15, colors='k')
+    CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
+    CB = plt.colorbar(CS, extend='both')
     # Finish and plot
     plt.show()
 

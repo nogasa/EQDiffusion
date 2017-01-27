@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4c2c8-d397-422b-9769-64f52c738e31" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muffin.py" afterPath="$PROJECT_DIR$/muffin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltonseaswarm.py" afterPath="$PROJECT_DIR$/saltonseaswarm.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socalswarm.py" afterPath="$PROJECT_DIR$/socalswarm.py" />
@@ -22,15 +23,13 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <leaf>
             <file leaf-file-name="muffin.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/muffin.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="263">
-                    <caret line="340" column="0" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#0#18#0" expanded="true" />
-                    </folding>
+                  <state relative-caret-position="-3012">
+                    <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -49,8 +48,8 @@
       <file leaf-file-name="swarm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state relative-caret-position="1245">
+              <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -61,8 +60,8 @@
       <file leaf-file-name="saltonseaswarm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saltonseaswarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -73,8 +72,8 @@
       <file leaf-file-name="socalswarm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socalswarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="85" column="32" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+            <state relative-caret-position="993">
+              <caret line="126" column="60" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -113,6 +112,7 @@
         <option value="$PROJECT_DIR$/data/socalswarms.py" />
         <option value="$PROJECT_DIR$/boo.py" />
         <option value="$PROJECT_DIR$/socalswarms.py" />
+        <option value="$PROJECT_DIR$/../COSO/coso-geodetic/crumpet.py" />
         <option value="$PROJECT_DIR$/saltonseaswarm.py" />
         <option value="$PROJECT_DIR$/muffin.py" />
         <option value="$PROJECT_DIR$/socalswarm.py" />
@@ -120,8 +120,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="11" />
     <option name="y" value="23" />
-    <option name="width" value="1144" />
+    <option name="width" value="996" />
     <option name="height" value="1337" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -208,7 +209,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="PyConsoleConfigurable.Python Console" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COSO/coso-geodetic" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COSO/coso-geodetic/crumpet.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -365,10 +366,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1144" height="1337" extended-state="0" />
+    <frame x="11" y="23" width="996" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16918968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1948718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931727" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32931727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -708,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../COSO/coso-geodetic/crumpet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="1094" column="31" selection-start-line="1094" selection-start-column="31" selection-end-line="1094" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/forandy/plotdiffusion.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -736,16 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/forandy/xyz_15">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -761,6 +745,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/socalswarms.py" />
+    <entry file="file://$PROJECT_DIR$/../COSO/coso-geodetic/crumpet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="677">
+          <caret line="1135" column="12" selection-start-line="1131" selection-start-column="8" selection-end-line="1138" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saltonseaswarm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/forandy/xyz_10">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -769,20 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saltonseaswarm.py">
+    <entry file="file://$PROJECT_DIR$/swarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socalswarm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="85" column="32" selection-start-line="85" selection-start-column="32" selection-end-line="85" selection-end-column="32" />
+        <state relative-caret-position="1245">
+          <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -791,8 +782,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/muffin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="340" column="0" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
+        <state relative-caret-position="-3012">
+          <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socalswarm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="993">
+          <caret line="126" column="60" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
