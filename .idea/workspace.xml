@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dce4c2c8-d397-422b-9769-64f52c738e31" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muffin.py" afterPath="$PROJECT_DIR$/muffin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saltonseaswarm.py" afterPath="$PROJECT_DIR$/saltonseaswarm.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socalswarm.py" afterPath="$PROJECT_DIR$/socalswarm.py" />
     </list>
     <ignored path="EQ.iws" />
@@ -23,11 +21,11 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file leaf-file-name="muffin.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/muffin.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-3012">
+                  <state relative-caret-position="15">
                     <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
                     <folding />
                   </state>
@@ -48,7 +46,7 @@
       <file leaf-file-name="swarm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
+            <state relative-caret-position="975">
               <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -72,8 +70,8 @@
       <file leaf-file-name="socalswarm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socalswarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="993">
-              <caret line="126" column="60" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
+            <state relative-caret-position="828">
+              <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -150,6 +148,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,8 +202,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -772,7 +770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
+        <state relative-caret-position="975">
           <caret line="83" column="38" selection-start-line="83" selection-start-column="38" selection-end-line="83" selection-end-column="38" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -782,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/muffin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3012">
+        <state relative-caret-position="15">
           <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="12" />
           <folding />
         </state>
@@ -790,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/socalswarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="993">
-          <caret line="126" column="60" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
+        <state relative-caret-position="828">
+          <caret line="115" column="48" selection-start-line="115" selection-start-column="48" selection-end-line="115" selection-end-column="48" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

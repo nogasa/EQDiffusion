@@ -25,7 +25,7 @@ import muffin as mf
 catalog = mf.catalog()
 
 # Pull data
-catalog.harvest_xyz('./data/forandy/xyz_10')
+catalog.harvest_xyz('./data/forandy/xyz_17')
 # Process data
 catalog.glean()
 
@@ -113,7 +113,7 @@ if plotty == True:
     plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)', zorder = 10)
     plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error', zorder = 10)
     plt.plot(x,Y2, 'black',linestyle='--', zorder = 10)
-    plt.title('SOCAL EQ Swarm Diffusion - xyz_10')
+    plt.title('SOCAL EQ Swarm Diffusion - xyz_17')
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
