@@ -25,7 +25,7 @@ import muffin as mf
 catalog = mf.catalog()
 
 # Pull data
-catalog.harvest_xyz('./data/forandy/xyz_17')
+catalog.harvest_xyz('./data/forandy/xyz_28')
 # Process data
 catalog.glean()
 
@@ -113,7 +113,7 @@ if plotty == True:
     plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)', zorder = 10)
     plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error', zorder = 10)
     plt.plot(x,Y2, 'black',linestyle='--', zorder = 10)
-    plt.title('SOCAL EQ Swarm Diffusion - xyz_17')
+    plt.title('SOCAL EQ Swarm Diffusion - xyz_28')
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
@@ -124,7 +124,7 @@ if plotty == True:
     xi = np.linspace(0., max(catalog.relative_decimal_dates))
     yi = np.linspace(0., max(catalog.Relative_distances))
     zi = griddata((catalog.relative_decimal_dates, catalog.Relative_distances), z,
-                  (xi[None, :], yi[:, None]), method='linear')
+                  (xi[None, :], yi[:, None]), method='nearest')
     CS = plt.contourf(xi, yi, zi, 15, colors='k')
     CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
     CB = plt.colorbar(CS, extend='both')
