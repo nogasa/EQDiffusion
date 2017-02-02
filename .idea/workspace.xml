@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4c2c8-d397-422b-9769-64f52c738e31" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figures/linear xyz plots (Mags)/xyz_17'.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muffin.py" afterPath="$PROJECT_DIR$/muffin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socalswarm.py" afterPath="$PROJECT_DIR$/socalswarm.py" />
     </list>
     <ignored path="EQ.iws" />
@@ -27,8 +25,8 @@
             <file leaf-file-name="muffin.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/muffin.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="285">
-                    <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+                  <state relative-caret-position="47">
+                    <caret line="376" column="32" selection-start-line="376" selection-start-column="32" selection-end-line="376" selection-end-column="32" />
                     <folding />
                   </state>
                 </provider>
@@ -72,8 +70,8 @@
       <file leaf-file-name="socalswarm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socalswarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1009">
-              <caret line="126" column="63" selection-start-line="126" selection-start-column="63" selection-end-line="126" selection-end-column="63" />
+            <state relative-caret-position="812">
+              <caret line="118" column="75" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -787,21 +785,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/muffin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/socalswarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1009">
-          <caret line="126" column="63" selection-start-line="126" selection-start-column="63" selection-end-line="126" selection-end-column="63" />
+        <state relative-caret-position="812">
+          <caret line="118" column="75" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/muffin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="376" column="32" selection-start-line="376" selection-start-column="32" selection-end-line="376" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

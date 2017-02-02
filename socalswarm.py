@@ -103,13 +103,18 @@ for value in np.ndenumerate(Y01):
 for value in np.ndenumerate(Y02):
     Y2.append(value[1])
 
+# insert cube sum function here
+X,Y,Z = catalog.summer_squares(10.)
+
+
+
 # Plot
 plotty = True
 if plotty == True:
     # Plot distances vs time
     plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = 'lightblue',
                 label = 'events', zorder = 10)
-    plt.scatter(tmaxima, dmaxima, color='blue', label = 'selected events', zorder = 10)
+    #plt.scatter(tmaxima, dmaxima, color='blue', label = 'selected events', zorder = 10)
     plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)', zorder = 10)
     plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error', zorder = 10)
     plt.plot(x,Y2, 'black',linestyle='--', zorder = 10)
@@ -119,12 +124,15 @@ if plotty == True:
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
     plt.ylim(0., max(catalog.Relative_distances)+0.2)
     plt.legend()
+    # Plot patches with sums of squares
+    catalog.summer_squares(15.)
+    plt.scatter(X,Y)
     # Generate grid and contour plot to overlay
     z = catalog.Mags
     xi = np.linspace(0., max(catalog.relative_decimal_dates))
     yi = np.linspace(0., max(catalog.Relative_distances))
-    zi = griddata((catalog.relative_decimal_dates, catalog.Relative_distances), z,
-                  (xi[None, :], yi[:, None]), method='nearest')
+    zi = griddata((X, Y), Z,
+                  (xi[None, :], yi[:, None]), method='cubic')
     CS = plt.contourf(xi, yi, zi, 15, colors='k')
     CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
     CB = plt.colorbar(CS, extend='both')

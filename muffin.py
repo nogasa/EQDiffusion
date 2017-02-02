@@ -381,6 +381,66 @@ class catalog():
             index = self.Decimal_dates.index(time)
             self.r.append((self.Relative_distances[index])**2)
 
+    def summer_squares(self, num_squares):
+        '''
+        Divides field into a mesh of squares, and sums the Mag of all events within each square.
+
+        :param num_squares      the number of squares/intervals to create on each axis
+        :type num_squares       int or float
+        :rtype:                 arrays
+        :return:                arrays to be plotted
+        '''
+        # Establish endpoints of each axis
+        maxtime = max(self.relative_decimal_dates)
+        maxdist = max(self.Relative_distances)
+        # Construct arrays containing the intervals for the squares
+        time_list = np.linspace(0., maxtime, num_squares)
+        dist_list = np.linspace(0., maxdist, num_squares)
+        # Compile relative distances and relative times into single, (x,y)-array
+        events = []
+        i=0
+        for value in self.relative_decimal_dates:
+            x,y,z = value, self.Relative_distances[i], self.Mags[i]
+            events.append([x,y,z])
+            i=i+1
+        # Establish lists to hold events before they are summed, for each square
+        sumsquares=[]
+        # Iterate through each interval
+        i=0
+        for timepoint in time_list:                             # iterate through time intervals
+            j=0
+            for distpoint in dist_list:                         # for each timepoint, iterate through all distpoints
+                TBS = []
+                k=0
+                for event in events:                            # for each distpoint, iterate through all events
+                    if events[k][0]>=timepoint:
+                        if events[k][0]<time_list[i+1]:
+                            if events[k][1]>=distpoint:
+                                if events[k][1]<dist_list[j+1]:
+                                    TBS.append([events[k][2]])
+                    k=k+1
+                squaresum = 0.
+                for value in TBS:
+                    squaresum = squaresum + value[0]
+                xx = time_list[i + 1] - timepoint
+                yy = dist_list[j + 1] - distpoint
+                j=j+1
+                if j==num_squares-1:
+                    break
+                sumsquares.append([xx,yy,squaresum])
+            i=i+1
+            if i==num_squares-1:
+                break
+        X=[]
+        Y=[]
+        Z=[]
+        for set in sumsquares:
+            X.append(set[0])
+            Y.append(set[1])
+            Z.append(set[2])
+        return X,Y,Z
+
+
     def cartographer(self):
         '''
         Plots events on a basemap. 
