@@ -405,40 +405,36 @@ class catalog():
             i=i+1
         # Establish lists to hold events before they are summed, for each square
         sumsquares=[]
-        # Iterate through each interval
-        i=0
-        for timepoint in time_list:                             # iterate through time intervals
-            j=0
-            for distpoint in dist_list:                         # for each timepoint, iterate through all distpoints
-                TBS = []
-                k=0
-                for event in events:                            # for each distpoint, iterate through all events
-                    if events[k][0]>=timepoint:
-                        if events[k][0]<time_list[i+1]:
-                            if events[k][1]>=distpoint:
-                                if events[k][1]<dist_list[j+1]:
-                                    TBS.append([events[k][2]])
-                    k=k+1
-                squaresum = 0.
-                for value in TBS:
-                    squaresum = squaresum + value[0]
-                xx = time_list[i + 1] - timepoint
-                yy = dist_list[j + 1] - distpoint
-                j=j+1
-                if j==num_squares-1:
-                    break
-                sumsquares.append([xx,yy,squaresum])
-            i=i+1
-            if i==num_squares-1:
-                break
+
         X=[]
         Y=[]
         Z=[]
-        for set in sumsquares:
-            X.append(set[0])
-            Y.append(set[1])
-            Z.append(set[2])
+        i=0
+        for time_iteration in time_list:                         # iterate through columns
+            j=0
+            for dist_iteration in dist_list:                      # iterate through each row in each column
+                TBS=[]
+                for event in events:                             # now check all events...
+                    if (event[0]>=time_list[i]) & (event[0]<time_list[i+1]):
+                        if (event[1]>=dist_list[j]) & (event[1]<dist_list[j+1]):
+                            TBS.append([event[2]])
+                squaresum = 0.
+                for value in TBS:
+                    squaresum = squaresum + value[0]
+                xx = time_iteration + ((time_list[i+1] - time_iteration)/2.)
+                yy = dist_iteration + ((dist_list[j+1] - dist_iteration)/2.)
+                X.append(xx)
+                Y.append(yy)
+                Z.append(squaresum)
+                j=j+1
+                if j == num_squares-1:
+                    break
+            i=i+1
+            if i == num_squares-1:
+                break
         return X,Y,Z
+
+
 
 
     def cartographer(self):

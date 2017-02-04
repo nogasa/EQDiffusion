@@ -25,7 +25,9 @@ import muffin as mf
 catalog = mf.catalog()
 
 # Pull data
-catalog.harvest_xyz('./data/forandy/xyz_28')
+filename = './data/forandy/xyz_10'
+name = filename[-6:]
+catalog.harvest_xyz(filename)
 # Process data
 catalog.glean()
 
@@ -104,10 +106,14 @@ for value in np.ndenumerate(Y02):
     Y2.append(value[1])
 
 # insert cube sum function here
-X,Y,Z = catalog.summer_squares(10.)
-
-
-
+num_squares = 8.
+X,Y,Z = catalog.summer_squares(num_squares)
+print 'X is '+str(len(X))
+print X
+print 'Y is '+str(len(Y))
+print Y
+print 'Z is '+str(len(Z))
+print Z
 # Plot
 plotty = True
 if plotty == True:
@@ -118,7 +124,7 @@ if plotty == True:
     plt.plot(x,y,color='black', label = 'r = sqrt(4piDt)', zorder = 10)
     plt.plot(x,Y1, 'black',linestyle='--', label = 'standard error', zorder = 10)
     plt.plot(x,Y2, 'black',linestyle='--', zorder = 10)
-    plt.title('SOCAL EQ Swarm Diffusion - xyz_28')
+    plt.title('EQ Swarm Diffusion | file: '+ name + ' | square-count: ' + str(num_squares))
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
@@ -127,6 +133,7 @@ if plotty == True:
     # Plot patches with sums of squares
     catalog.summer_squares(15.)
     plt.scatter(X,Y)
+
     # Generate grid and contour plot to overlay
     z = catalog.Mags
     xi = np.linspace(0., max(catalog.relative_decimal_dates))
@@ -136,6 +143,7 @@ if plotty == True:
     CS = plt.contourf(xi, yi, zi, 15, colors='k')
     CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
     CB = plt.colorbar(CS, extend='both')
+
     # Finish and plot
     plt.show()
 
