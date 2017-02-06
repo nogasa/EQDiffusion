@@ -25,7 +25,7 @@ import muffin as mf
 catalog = mf.catalog()
 
 # Pull data
-filename = './data/forandy/xyz_10'
+filename = './data/forandy/xyz_19'
 name = filename[-6:]
 catalog.harvest_xyz(filename)
 # Process data
@@ -130,19 +130,19 @@ if plotty == True:
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
     plt.ylim(0., max(catalog.Relative_distances)+0.2)
     plt.legend()
-    # Plot patches with sums of squares
-    catalog.summer_squares(15.)
-    plt.scatter(X,Y)
-
-    # Generate grid and contour plot to overlay
-    z = catalog.Mags
-    xi = np.linspace(0., max(catalog.relative_decimal_dates))
-    yi = np.linspace(0., max(catalog.Relative_distances))
-    zi = griddata((X, Y), Z,
-                  (xi[None, :], yi[:, None]), method='cubic')
-    CS = plt.contourf(xi, yi, zi, 15, colors='k')
-    CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
-    CB = plt.colorbar(CS, extend='both')
+    if catalog.summer == True:
+        # Plot patches with sums of squares
+        catalog.summer_squares(15.)
+        plt.scatter(X,Y)
+        # Generate grid and contour plot to overlay
+        z = catalog.Mags
+        xi = np.linspace(0., max(catalog.relative_decimal_dates))
+        yi = np.linspace(0., max(catalog.Relative_distances))
+        zi = griddata((X, Y), Z,
+                      (xi[None, :], yi[:, None]), method='cubic')
+        CS = plt.contourf(xi, yi, zi, 15, colors='k')
+        CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
+        CB = plt.colorbar(CS, extend='both')
 
     # Finish and plot
     plt.show()

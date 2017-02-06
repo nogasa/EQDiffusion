@@ -111,6 +111,7 @@ class catalog():
         self.D = []
         self.r = []
         self.D_err = []
+        self.summer= False
 
     def harvest_xyz(self,filename):
         '''
@@ -432,6 +433,7 @@ class catalog():
             i=i+1
             if i == num_squares-1:
                 break
+            self.summer = True
         return X,Y,Z
 
 
