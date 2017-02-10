@@ -406,7 +406,6 @@ class catalog():
             i=i+1
         # Establish lists to hold events before they are summed, for each square
         sumsquares=[]
-
         X=[]
         Y=[]
         Z=[]

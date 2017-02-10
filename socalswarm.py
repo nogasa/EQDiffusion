@@ -25,7 +25,7 @@ import muffin as mf
 catalog = mf.catalog()
 
 # Pull data
-filename = './data/forandy/xyz_19'
+filename = './data/forandy/xyz_10'
 name = filename[-6:]
 catalog.harvest_xyz(filename)
 # Process data
@@ -106,7 +106,7 @@ for value in np.ndenumerate(Y02):
     Y2.append(value[1])
 
 # insert cube sum function here
-num_squares = 8.
+num_squares = 5.
 X,Y,Z = catalog.summer_squares(num_squares)
 print 'X is '+str(len(X))
 print X
@@ -114,6 +114,7 @@ print 'Y is '+str(len(Y))
 print Y
 print 'Z is '+str(len(Z))
 print Z
+
 # Plot
 plotty = True
 if plotty == True:
@@ -138,12 +139,10 @@ if plotty == True:
         z = catalog.Mags
         xi = np.linspace(0., max(catalog.relative_decimal_dates))
         yi = np.linspace(0., max(catalog.Relative_distances))
-        zi = griddata((X, Y), Z,
-                      (xi[None, :], yi[:, None]), method='cubic')
+        zi = griddata((X, Y), Z, (xi[None, :], yi[:, None]), method='cubic')
         CS = plt.contourf(xi, yi, zi, 15, colors='k')
         CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
         CB = plt.colorbar(CS, extend='both')
-
     # Finish and plot
     plt.show()
 
