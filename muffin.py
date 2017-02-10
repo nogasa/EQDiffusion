@@ -293,7 +293,7 @@ class catalog():
                                             self.Mags.append(float(Line[10]))
         print 'harvested from SCDEC Earthquake self'
 
-    def glean(self):
+    def process(self):
         '''
         Process data and define necessary class variables.
 
@@ -321,7 +321,61 @@ class catalog():
         self.londist = self.maxlon - self.minlon
         self.latdist = self.maxlat - self.minlat
 
+    def glean(self, min_time, max_time):
+        '''
+        Crops out a select portion of the data set and corresponding arrays constructed in
+        self.harvest and self.process, based on a minimum and maximum time value.
 
+        :param min_time:        the lower time boundary
+        :param max_time:        the upper time boundary
+        :type min_time:         float
+        :type max_time:         float
+        :rtype:                 none
+        :return:                none
+        '''
+        min_time = float(min_time)
+        max_time = float(max_time)
+        # iterate through dates relative dates array, find values after min time and before max time
+        temp_arrayA = []
+        for date in self.relative_decimal_dates:
+            if date >= min_time:
+                if date <= max_time:
+                    temp_arrayA.append(date)
+        temp_arrayAA = []
+        i=0
+        for date in temp_arrayA:
+            temp_arrayAA.append(date - temp_arrayA[0])
+            i=i+1
+        # find indices in original list that mark boundary events
+        lower_boundary = temp_arrayA[0]
+        upper_boundary = temp_arrayA[-1]
+        lower_index = self.relative_decimal_dates.index(lower_boundary)
+        upper_index = self.relative_decimal_dates.index(upper_boundary)+1
+        # Redefine class arrays and variables
+        self.relative_decimal_dates = temp_arrayAA
+        self.Lats = self.Lats[lower_index:upper_index]
+        self.Lons = self.Lons[lower_index:upper_index]
+        self.Mags = self.Mags[lower_index:upper_index]
+        self.E0_index = self.relative_decimal_dates.index(min(self.relative_decimal_dates))
+        temp_arrayB = []
+        i=0
+        for event in self.relative_decimal_dates:
+            lon1, lat1, lon2, lat2 = map(radians, [self.Lons[self.E0_index], self.Lats[self.E0_index],
+                                                   self.Lons[i], self.Lats[i]])
+            km = haversine_distance(lon1, lat1, lon2, lat2)
+            temp_arrayB.append(km)
+            i = i + 1
+        self.Relative_distances = temp_arrayB
+        self.minlat = min(self.Lats)
+        self.maxlat = max(self.Lats)
+        self.minlon = min(self.Lons)
+        self.maxlon = max(self.Lons)
+        self.londist = self.maxlon - self.minlon
+        self.latdist = self.maxlat - self.minlat
+
+
+
+        # redefine them as select portions of themselves
 
 
     def randomquake(self):
@@ -348,7 +402,7 @@ class catalog():
         :rtype:             array
         :return:            array containing maxima distances and times
         '''
-        self.tlimit = max(self.Decimal_dates) - min(self.Decimal_dates)
+        self.tlimit = max(self.relative_decimal_dates) - min(self.relative_decimal_dates)
         interval = self.tlimit/float(groups)
         dmaxima = []
         tmaxima = []

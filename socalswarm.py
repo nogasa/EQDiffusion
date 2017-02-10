@@ -20,19 +20,27 @@ import statsmodels.api as sm
 
 import muffin as mf
 
+# ESTABLISH FINAL ROUTINE PROCEDURE
+mode = 'plot'
+
+
 ### DATA PROCESSING AND LEAST SQUARES ROUTINE ###
 # Define catalog
 catalog = mf.catalog()
 
 # Pull data
-filename = './data/forandy/xyz_10'
+filename = './data/forandy/xyz_50'
 name = filename[-6:]
 catalog.harvest_xyz(filename)
+
 # Process data
-catalog.glean()
+catalog.process()
+
+# Glean data
+#catalog.glean(0.006, 0.009)
 
 # Establish number of time intervals
-num_intervals = 20.
+num_intervals = 15.
 
 # Find the maximum distances in each time interval, as well as their associated times and mags
 dmaxima, tmaxima = catalog.find_maxima(num_intervals)
@@ -69,8 +77,7 @@ print len(catalog.relative_decimal_dates)
 
 
 ### MAPPING ROUTINE ####
-mappy = False
-if mappy == True:
+if mode == 'map':
     catalog.cartographer()
 
 ### CURVE PLOTTING ROUTINE ###
@@ -106,7 +113,7 @@ for value in np.ndenumerate(Y02):
     Y2.append(value[1])
 
 # insert cube sum function here
-num_squares = 5.
+num_squares = 20.
 X,Y,Z = catalog.summer_squares(num_squares)
 print 'X is '+str(len(X))
 print X
@@ -116,8 +123,7 @@ print 'Z is '+str(len(Z))
 print Z
 
 # Plot
-plotty = True
-if plotty == True:
+if mode == 'plot':
     # Plot distances vs time
     plt.scatter(catalog.relative_decimal_dates, catalog.Relative_distances, color = 'lightblue',
                 label = 'events', zorder = 10)
