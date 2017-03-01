@@ -29,7 +29,7 @@ mode = 'plot'
 catalog = mf.catalog()
 
 # Pull data
-filename = './data/forandy/xyz_50'
+filename = './data/forandy/xyz_10'
 name = filename[-6:]
 catalog.harvest_xyz(filename)
 
@@ -37,10 +37,10 @@ catalog.harvest_xyz(filename)
 catalog.process()
 
 # Glean data
-#catalog.glean(0.006, 0.009)
+#catalog.glean(0.0065, 0.009)
 
 # Establish number of time intervals
-num_intervals = 15.
+num_intervals = 20.
 
 # Find the maximum distances in each time interval, as well as their associated times and mags
 dmaxima, tmaxima = catalog.find_maxima(num_intervals)
@@ -90,7 +90,7 @@ x = t1.T
 
 # Generate new 'r' array for plotting of the curve (y array)
 r1 = x * catalog.D         # multiply to get theoretical squared distance values
-r1 = np.sqrt(r1)            # root to get true distance values
+r1 = np.sqrt(r1)           # root to get true distance values
 r1 = r1.T                                                                      # Generate y values for curve
 r1 = np.array(r1)
 y=[]
@@ -135,7 +135,7 @@ if mode == 'plot':
     plt.ylabel('DISTANCE (KM)')
     plt.xlabel('TIME (DECIMAL YEARS)')
     plt.xlim(min(catalog.relative_decimal_dates),max(catalog.relative_decimal_dates))
-    plt.ylim(0., max(catalog.Relative_distances)+0.2)
+    plt.ylim(0., max(catalog.Relative_distances)+ max(catalog.Relative_distances)/10.)
     plt.legend()
     if catalog.summer == True:
         # Plot patches with sums of squares
@@ -145,7 +145,7 @@ if mode == 'plot':
         z = catalog.Mags
         xi = np.linspace(0., max(catalog.relative_decimal_dates))
         yi = np.linspace(0., max(catalog.Relative_distances))
-        zi = griddata((X, Y), Z, (xi[None, :], yi[:, None]), method='cubic')
+        zi = griddata((X, Y), Z, (xi[None, :], yi[:, None]), method='linear')
         CS = plt.contourf(xi, yi, zi, 15, colors='k')
         CS = plt.contourf(xi, yi, zi, 15, cmap=plt.cm.viridis, alpha=0.95, zorder=5)
         CB = plt.colorbar(CS, extend='both')

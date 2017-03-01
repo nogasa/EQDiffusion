@@ -113,6 +113,7 @@ class catalog():
         self.D_err = []
         self.summer= False
 
+
     def harvest_xyz(self,filename):
         '''
         Harvests data from the forandy file in the data file.
@@ -148,6 +149,7 @@ class catalog():
             self.Mags.append(float(mw))
             exp = 1.5 * (float(mw) + 10.7)
             self.Mo.append(10.0**exp)
+
 
     def harvest_NCDEC(self, filename):
         '''
@@ -190,6 +192,7 @@ class catalog():
             decimal_date = date_to_dec(year, month, day)
             self.Decimal_dates.append(decimal_date)
         print 'harvest from NCDEC Earthquake Catalog'
+
 
     def harvest_USGS(self, filename):
         '''
@@ -242,6 +245,7 @@ class catalog():
             self.Decimal_dates.append(decimal_date)
         print 'harvested from USGS Earthquake self'
 
+
     def harvest_SCDEC(self, filename, boundaries=False):
         '''
         Harvests data from a downloaded SCDEC text file
@@ -293,6 +297,7 @@ class catalog():
                                             self.Mags.append(float(Line[10]))
         print 'harvested from SCDEC Earthquake self'
 
+
     def process(self):
         '''
         Process data and define necessary class variables.
@@ -321,10 +326,16 @@ class catalog():
         self.londist = self.maxlon - self.minlon
         self.latdist = self.maxlat - self.minlat
 
+
     def glean(self, min_time, max_time):
         '''
         Crops out a select portion of the data set and corresponding arrays constructed in
-        self.harvest and self.process, based on a minimum and maximum time value.
+        self.harvest and self.process, based on a minimum and maximum relative time value.
+
+        Instructions:
+            Run script and generate plot without glean, observe plot. Note a relative lower
+            temporal bound and relative upper bound using plot, and then add glean function
+            after self.process is run. Input lower and upper bounds into glean function.
 
         :param min_time:        the lower time boundary
         :param max_time:        the upper time boundary
@@ -374,10 +385,6 @@ class catalog():
         self.latdist = self.maxlat - self.minlat
 
 
-
-        # redefine them as select portions of themselves
-
-
     def randomquake(self):
         '''
         Determines a random integer between 1 and the length of self.Decimal_dates
@@ -392,6 +399,7 @@ class catalog():
         print 'Randomized int: ' + str(R)
         print 'EQs pulled from self: ' + str(count)
         return R
+
 
     def find_maxima(self, groups):
         '''
@@ -425,6 +433,7 @@ class catalog():
             i = i + 1
         return dmaxima, tmaxima
 
+
     def r_matrix(self):
         '''
         Generates the r matrix corresponding to the t-matrix from self.find_maxima
@@ -435,6 +444,7 @@ class catalog():
         for time in self.t:
             index = self.Decimal_dates.index(time)
             self.r.append((self.Relative_distances[index])**2)
+
 
     def summer_squares(self, num_squares):
         '''
@@ -490,8 +500,6 @@ class catalog():
         return X,Y,Z
 
 
-
-
     def cartographer(self):
         '''
         Plots events on a basemap. 
@@ -528,6 +536,5 @@ class catalog():
         width = haversine_distance(lon1, lat1, lon2, lat2)
         plt.text(self.minlon+(self.londist/2.), self.minlat, str(round(width,2))+' km', fontweight='bold')
         plt.text(self.minlon, self.minlat+(self.latdist/2.), str(round(height,2))+' km', fontweight='bold',rotation = 90)
-
         plt.show()
     
