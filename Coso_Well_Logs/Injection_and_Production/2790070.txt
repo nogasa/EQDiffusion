@@ -1,0 +1,1 @@
+ API #   opcode   lease     well #  month  year status type  days gross_inj water_inj_rate   gross_fluid    water_prod_rate   steam_prod_rate TDS  wellhead temp press

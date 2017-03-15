@@ -1,3 +1,0 @@
-<?xml version="1.0"?>
-<!--<!DOCTYPE metadata SYSTEM "http://www.esri.com/metadata/esriprof80.dtd">-->
-<metadata xml:lang="en"><Esri><MetaID>{FA39B833-8758-4CB6-AF40-F22CE1C0C024}</MetaID><CreaDate>20070502</CreaDate><CreaTime>15090800</CreaTime><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process Name="PointToRaster_1" ToolSource="C:\Program Files\ArcGIS\ArcToolbox\Toolboxes\Conversion Tools.tbx\PointToRaster" Date="20070502" Time="150908">PointToRaster C:\Coso\coso_gis\3Dwells\shapefiles\test\83b-16.shp FID C:\Coso\coso_gis\3Dwells\shapefiles\test\c83b-16_Poin MOST_FREQUENT NONE 1000</Process></lineage></DataProperties></Esri></metadata>
