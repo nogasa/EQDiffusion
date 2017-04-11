@@ -1,11 +1,12 @@
 from pyproj import Proj, transform
 import numpy as np
 from pandas import DataFrame
+import os, sys
 
 def convertSP2WGS84LL(x,y):
    wgs84_proj = Proj('+proj=longlat +datum=WGS84 +no_defs')
    stateplane_nad83_proj = Proj(init='EPSG:2873',preserve_units=True)
-   lat,lon = transform(stateplane_nad27_proj,wgs84_proj,x,y)
+   lat,lon = transform(stateplane_nad83_proj,wgs84_proj,x,y)
    return lat,lon
 
 class Well():
@@ -51,31 +52,37 @@ class Well():
 
 if __name__ == '__main__':                              # If run as a script...
 
-# Specify the lease and well number
-LEASE = 'BLM'
-NAME = '73-19'
-FILE_TYPE = '.csv'
-GREATER_FILE_PATH = './3Dwells/tables/''
-IDNUM =
+	# Specify the lease and well number
+	LEASE = 'BLM'
+	NAME = '73-19'
+	FILE_TYPE = '.csv'
+	GREATER_FILE_PATH = './3Dwells/tables/'
+	#IDNUM = '027-90217'
 
-inputpath = GREATER_FILE_PATH + LEASE + '/' + NAME + FILE_TYPE
-outputpath = GREATER_FILE_PATH + LEASE + '/' + IDNUM + '.txt'
-
-
-W7319 = Well()
-W7319.harvest(inputpath)
-for linenum in W7319.Id:
-   lat,lon = convertSP2WGS84LL(self.northing[linenum-1], self.easting[linenum-1])
-   lat,lon = convertSP2WGS84LL(well[:,1],well[:,2])         # Create lat, lon arrays
-   dep = self.elevation[linenum-1]*.3048                                    # Convert feet to meters
-   self.lat.append(lat)
-   self.lon.append(lon)
-   self.z.append(dep)
+	inputpath = os.path.join(GREATER_FILE_PATH, LEASE,  NAME + FILE_TYPE)
+	#outputpath = GREATER_FILE_PATH + LEASE + '/' + IDNUM + '.txt'
 
 
+	W7319 = Well()
+	W7319.harvest(inputpath)
+	i=1
+	for linenum in W7319.Id:
+	   print W7319.elevation
+	   lat,lon = convertSP2WGS84LL(W7319.northing[i-1], W7319.easting[i-1])
+	   #lat,lon = convertSP2WGS84LL(well[:,1],well[:,2])         # Create lat, lon arrays
+	   #print lat,lon
+	   dep = int(W7319.elevation[i-1])*.3048                                    # Convert feet to meters
+	   print lat, lon, dep
+	   print '------'
+	   W7319.lat.append(lat)
+	   W7319.lon.append(lon)
+	   W7319.z.append(dep)
+	   i+=1
 
-np.savetxt('./Converted well logs/BLM/027-90217.txt',
-                    np.transpose(gm1Out),newline='\n',comments='# ',
-                    fmt='%3.8f, %3.8f, %4.6f')
+
+
+	np.savetxt('./Converted well logs/BLM/027-90217.txt',
+						np.transpose(gm1Out),newline='\n',comments='# ',
+						fmt='%3.8f, %3.8f, %4.6f')
 
    
