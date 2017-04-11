@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
    gm1Out = np.vstack(( lat, lon, dep))
 
-   outputfile = './Converted well logs/BLM/027-90219.txt'
+   outputfile = './Converted well logs/BLM/2790219.txt'
    np.savetxt(outputfile, np.transpose(gm1Out),newline='\n',comments='# ',
                     fmt='%3.8f, %3.8f, %4.6f')
    fname = outputfile.split('/')
