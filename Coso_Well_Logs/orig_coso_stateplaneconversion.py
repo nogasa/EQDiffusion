@@ -10,7 +10,7 @@ def convertSP2WGS84LL(x,y):
 
 
 if __name__ == '__main__':
-   filename = './3DWells/tables/BLM/16B-20.csv'
+   filename = './3DWells/tables/Navy2/13A-16.csv'
    fname = filename.split('/')
    print 'pulling data from ' + fname[4]
    well = np.loadtxt(filename, delimiter=',',skiprows=1,usecols=(0,1,2,3))
@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
    gm1Out = np.vstack(( lat, lon, dep))
 
-   outputfile = './Converted well logs/BLM/2790219.txt'
+   outputfile = './Converted well logs/Navy2/2790100.txt'
    np.savetxt(outputfile, np.transpose(gm1Out),newline='\n',comments='# ',
                     fmt='%3.8f, %3.8f, %4.6f')
    fname = outputfile.split('/')

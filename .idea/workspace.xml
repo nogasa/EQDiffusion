@@ -2,140 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4c2c8-d397-422b-9769-64f52c738e31" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90009.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90015.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90027.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90028.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90029.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90032.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90033.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90038.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90054.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90055.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90075.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90079.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90080.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90081.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90083.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90084.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90088.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90089.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90090.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90091.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90124.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90125.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90127.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90128.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90129.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90134.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90135.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90138.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90139.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90142.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90143.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90156.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90171.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90200.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90203.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90211.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90217.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90218.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90219.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90225.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90227.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90230.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90231.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90004.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90008.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90010.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90011.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90012.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90013.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90016.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90017.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90018.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90019.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90020.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90021.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90022.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90040.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90041.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90043.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90045.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90046.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90047.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90048.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90049.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90050.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90052.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90056.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90057.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90058.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90064.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90065.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90087.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90092.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90093.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90094.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90095.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90098.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90099.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90136.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90137.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90140.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90146.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90148.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90151.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90153.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90197.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90201.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90206.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90229.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90233.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90236.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90237.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90239.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy1/027-90249.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90023.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90044.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90061.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90066.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90067.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90069.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90070.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90071.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90073.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90074.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90100.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90101.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90104.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90105.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90106.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90110.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90111.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90114.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90116.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90141.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90154.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90155.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90158.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90161.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90162.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90163.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90166.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90204.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90207.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90208.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90213.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90215.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90216.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90220.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90222.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90224.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90226.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90238.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/Navy2/027-90250.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Coso_well_log.xls" afterPath="$PROJECT_DIR$/Coso_Well_Logs/Coso_well_log.xls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py" afterPath="$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py" />
     </list>
     <ignored path="EQ.iws" />
@@ -159,7 +27,7 @@
       <file leaf-file-name="swarm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="330">
               <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -183,7 +51,7 @@
       <file leaf-file-name="coso_stateplaneconversion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coso_stateplaneconversion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="105">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -205,9 +73,11 @@
       <file leaf-file-name="coso_stateplaneconversion.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/coso_stateplaneconversion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <marker date="1491951853000" expanded="false" signature="0:82" ph="import ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -215,8 +85,8 @@
       <file leaf-file-name="orig_coso_stateplaneconversion.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            <state relative-caret-position="315">
+              <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -258,7 +128,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
+    <option name="x" value="890" />
     <option name="y" value="23" />
     <option name="width" value="1665" />
     <option name="height" value="1337" />
@@ -288,8 +158,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -511,7 +381,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="23" width="1665" height="1337" extended-state="0" />
+    <frame x="890" y="23" width="1665" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16119221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -759,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,41 +636,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90015.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90015.txt" />
     <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Injection_and_Production/2790217.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90217.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Converted well logs/BLM/027-90217.txt" />
     <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/Injection_and_Production/2790220.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +688,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="330">
           <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -853,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2955">
           <caret line="206" column="13" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -861,13 +707,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3000">
           <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/coso_stateplaneconversion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="105">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
@@ -879,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3092">
           <caret line="1248" column="42" selection-start-line="1248" selection-start-column="42" selection-end-line="1248" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,16 +744,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/coso_stateplaneconversion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="195">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <marker date="1491951853000" expanded="false" signature="0:82" ph="import ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        <state relative-caret-position="315">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
