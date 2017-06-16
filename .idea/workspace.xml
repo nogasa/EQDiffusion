@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dce4c2c8-d397-422b-9769-64f52c738e31" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coso_Well_Logs/Coso_well_log.xls" afterPath="$PROJECT_DIR$/Coso_Well_Logs/Coso_well_log.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py" afterPath="$PROJECT_DIR$/Coso_Well_Logs/orig_coso_stateplaneconversion.py" />
     </list>
     <ignored path="EQ.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,7 +126,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="890" />
+    <option name="x" value="173" />
     <option name="y" value="23" />
     <option name="width" value="1665" />
     <option name="height" value="1337" />
@@ -381,7 +379,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="890" y="23" width="1665" height="1337" extended-state="0" />
+    <frame x="173" y="23" width="1665" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16119221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
